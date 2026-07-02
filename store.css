@@ -1,0 +1,44 @@
+/* General body styling */
+body {
+    background-color: #a4a8ab;
+    font-family: Arial, sans-serif;
+    color: #343a40;
+  }
+  
+  /* Custom card styling */
+  .custom-card {
+    border-radius: 10px;
+    background: linear-gradient(135deg, #aea1a1, #f0f0f0);
+    border: none;
+    padding: 20px;
+  }
+  
+  /* Header styling */
+  .custom-header {
+    color: #007bff;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  /* Custom input styling */
+  .custom-input {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+  }
+  
+  /* Custom button styling */
+  .custom-btn {
+    background-color: #127be4;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 15px;
+  }
+  
+  .custom-btn:hover {
+    background-color: #0056b3;
+    color: #fff;
+  }
+  

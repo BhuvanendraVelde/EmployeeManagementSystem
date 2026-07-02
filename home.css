@@ -1,0 +1,25 @@
+body{
+    background-color: #bac0c7;
+        font-family: Arial, sans-serif;
+    }
+    .container {
+    max-width: 800px;
+    margin-top: 70px;
+    }
+    .list-group-item {
+    margin-bottom: 30px;
+    padding: 40px;
+    border-radius: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .list-group-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(209, 107, 107, 0.2);
+    }
+    a {
+    text-decoration: none;
+    color: rgb(26, 18, 18);
+    }
+    a:hover {
+    text-decoration: none;
+    }

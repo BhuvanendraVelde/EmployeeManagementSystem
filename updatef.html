@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="update.css">
+  <title>Update Employee Data</title>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-lg custom-card">
+          <div class="card-body">
+            <h1 class="text-center mb-4 custom-header">Update Employee Details</h1>
+            <form method="post" action="/employee/update" onsubmit="return MyFunction()">
+              <div class="mb-3">
+                <label for="emp_id" class="form-label">Enter Emp_Id to Update Record</label>
+                <input type="text" name="emp_id" id="emp_id" class="form-control custom-input" required>
+              </div>
+              <div class="mb-3">
+                <label for="emp_name" class="form-label">Enter Updated Emp_Name</label>
+                <input type="text" name="emp_name" id="emp_name" class="form-control custom-input" required>
+              </div>
+              <div class="mb-3">
+                <label for="dept" class="form-label">Enter Updated Dept</label>
+                <input type="text" name="dept" id="dept" class="form-control custom-input" required>
+              </div>
+              <div class="mb-3">
+                <label for="job_title" class="form-label">Enter Updated Job_Title</label>
+                <input type="text" name="job_title" id="job_title" class="form-control custom-input" required>
+              </div>
+              <button type="submit" class="btn btn-primary w-100 custom-btn">Update</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function MyFunction() {
+      var emp_id = document.getElementById("emp_id").value;
+      var emp_name = document.getElementById("emp_name").value;
+      var dept = document.getElementById("dept").value;
+      var job_title = document.getElementById("job_title").value;
+
+      // Validation patterns
+      var empIdPattern = /^[1-9][0-9]*$/; // Must be numeric and greater than zero
+      var empNamePattern = /^[A-Za-z\s]+$/; // Only alphabetic characters and spaces
+      var deptPattern = /^[A-Za-z]+$/; // Only alphabetic characters (no spaces)
+      var jobTitlePattern = /^[A-Za-z\s\-]+$/; // Alphabetic characters, spaces, and hyphens
+
+      // Validate Emp_Id
+      if (!empIdPattern.test(emp_id)) {
+        alert("Emp_Id must be a positive numerical value.");
+        return false;
+      }
+
+      // Validate Emp_Name
+      if (!empNamePattern.test(emp_name)) {
+        alert("Emp_Name must contain only letters and spaces.");
+        return false;
+      }
+
+      // Validate Dept
+      if (!deptPattern.test(dept)) {
+        alert("Dept must contain only letters with no spaces.");
+        return false;
+      }
+
+      // Validate Job_Title
+      if (!jobTitlePattern.test(job_title)) {
+        alert("Job_Title can only contain letters, spaces, and hyphens.");
+        return false;
+      }
+
+      return true; // Allow submission if all validations pass
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
